@@ -1,7 +1,9 @@
+<!-- Add bookmark input with submit button and validation messages.-->
 <div class="flex flex-row w-full gap-2">
   <form (ngSubmit)="addBookmark()" class="flex flex-col gap-2 w-full">
     <input pInputText id="bookmark-url" aria-describedby="bookmark-url-help" pSize="small" [formControl]="url" placeholder="Enter bookmark URL" />
 
+    <!-- Validation error messages for input -->
     @if (url.invalid && (url.dirty || url.touched)) {
       <small id="bookmark-url-help" class="text-red-400">
         @if (url.hasError('required')) {
@@ -15,6 +17,7 @@
     }
   </form>
 
+  <!-- Add/Update buttons for when adding or editing a bookmark -->
   @if (showUpdateButton()) {
     <p-button [label]="buttonText()" size="small" class="w-fit whitespace-nowrap" [loading]="loading" (click)="updateBookmark()" />
   } @else {

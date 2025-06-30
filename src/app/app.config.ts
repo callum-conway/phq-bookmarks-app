@@ -5,7 +5,11 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { provideRouter } from '@angular/router';
 
-
+/**
+ * Global application configuration.
+ * Sets up providers for zone change detection, router, asynchronous animations,
+ * and PrimeNG configuration including the Aura theme.
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
