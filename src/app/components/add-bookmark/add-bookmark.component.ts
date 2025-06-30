@@ -19,6 +19,7 @@ export class AddBookmarkComponent {
   buttonText = input<string>('Add Bookmark');
   showUpdateButton = input<boolean>(false);
   urlString = input<string>('');
+  loading: boolean = false;
 
   url = new FormControl(this.urlString(), [
     Validators.required,
@@ -47,25 +48,33 @@ export class AddBookmarkComponent {
   }
 
   addBookmark() {
+    this.loading = true;
     this.urlExistsStatus(this.url.value ?? '').then((status) => {
       if (this.url.valid && this.url.value !== null) {
         this.bookmarksService.addBookmark(this.url.value, status);
         this.url.reset('');
         this.url.setValue('');
-        console.log('redirect to results page');
       }
+      this.loading = false
     })
   }
 
   updateBookmark() {
-    if (this.url.valid && this.url.value !== null) {
-      const updatedBookmark: Bookmark = {
-        ...this.bookmarksService.selectedBookmark(),
-        url: this.url.value
-      };
-      this.bookmarksService.updateBookmark(updatedBookmark);
-      this.bookmarksService.selectedBookmark.set({ id: '', title: '', url: '', status: 'undefined' });
-      this.bookmarksService.toggleEditDialog();
-    }
+    this.loading = true;
+    this.urlExistsStatus(this.url.value ?? '').then((status) => {
+      if (this.url.valid && this.url.value !== null) {
+        const updatedBookmark: Bookmark = {
+          ...this.bookmarksService.selectedBookmark(),
+          url: this.url.value,
+          status: status,
+        };
+        this.bookmarksService.selectedBookmark.set({ id: '', title: '', url: '', status: 'undefined' });
+        this.bookmarksService.toggleEditDialog();
+        this.url.reset('');
+        this.url.setValue('');
+        this.bookmarksService.updateBookmark(updatedBookmark);
+      }
+      this.loading = false
+    })
   }
 }

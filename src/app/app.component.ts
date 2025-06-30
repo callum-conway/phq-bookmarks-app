@@ -9,7 +9,7 @@ import { BookmarkService } from './services/bookmarks/bookmark.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'PHQ Bookmarks App';
+  title = 'PHQ-bookmarks-app';
   private bookmarksService = inject(BookmarkService);
 
   ngOnInit(): void {

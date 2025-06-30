@@ -19,7 +19,6 @@ export class BookmarkItemActionsComponent {
   }
 
   selectBookmark() {
-    console.log('actions: selectBookmark', this.bookmark());
     this.bookmarksService.selectedBookmark.set(this.bookmark());
   }
 

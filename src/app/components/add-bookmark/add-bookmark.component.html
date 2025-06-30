@@ -16,8 +16,8 @@
   </form>
 
   @if (showUpdateButton()) {
-    <p-button [label]="buttonText()" size="small" class="w-fit whitespace-nowrap" (click)="updateBookmark()" />
+    <p-button [label]="buttonText()" size="small" class="w-fit whitespace-nowrap" [loading]="loading" (click)="updateBookmark()" />
   } @else {
-    <p-button [label]="buttonText()" size="small" class="w-fit whitespace-nowrap" (click)="addBookmark()" />
+    <p-button [label]="buttonText()" size="small" class="w-fit whitespace-nowrap" [loading]="loading" (click)="addBookmark()" />
   }
 </div>
