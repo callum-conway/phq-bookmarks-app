@@ -1,0 +1,23 @@
+<div class="flex flex-row w-full gap-2">
+  <form (ngSubmit)="addBookmark()" class="flex flex-col gap-2 w-full">
+    <input pInputText id="bookmark-url" aria-describedby="bookmark-url-help" pSize="small" [formControl]="url" placeholder="Enter bookmark URL" />
+
+    @if (url.invalid && (url.dirty || url.touched)) {
+      <small id="bookmark-url-help" class="text-red-400">
+        @if (url.hasError('required')) {
+        <ng-container>URL is required.</ng-container>
+        } @else if (url.hasError('minlength')) {
+        <ng-container>URL must be at least 5 characters long.</ng-container>
+        } @else if (url.hasError('invalidUrl')) {
+        <ng-container>Please enter a valid URL (e.g., http://example-url.com).</ng-container>
+        }
+      </small>
+    }
+  </form>
+
+  @if (showUpdateButton()) {
+    <p-button [label]="buttonText()" size="small" class="w-fit whitespace-nowrap" (click)="updateBookmark()" />
+  } @else {
+    <p-button [label]="buttonText()" size="small" class="w-fit whitespace-nowrap" (click)="addBookmark()" />
+  }
+</div>

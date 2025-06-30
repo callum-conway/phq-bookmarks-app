@@ -1,0 +1,11 @@
+<div class="flex justify-between items-center h-11 md:h-10 py-1 px-3 bg-slate-50 dark:bg-white/5 rounded-lg relative">
+  <p-badge value="" [pTooltip]="statusBadge().label" tooltipStyleClass="text-xs" [severity]="statusBadge().severity" tooltipPosition="top" class="cursor-pointer absolute top-0.5 right-0.5 shadow-red-500"/>
+  <div class="flex flex-col max-w-3/5 md:flex-row md:items-center md:gap-4">
+    <p class="text-sm truncate">{{bookmark().title ? bookmark().title : bookmark().url}}</p>
+    @if (bookmark().title) {
+      <p class="dark:text-white/40 text-slate-400 text-xs truncate">{{ bookmark().url }}</p>
+    }
+  </div>
+
+  <app-bookmark-item-actions [bookmark]="bookmark()" />
+</div>
