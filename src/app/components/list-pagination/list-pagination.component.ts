@@ -1,6 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { BookmarkService } from '../../bookmarks/bookmark.service';
+import { BookmarkService } from '../../services/bookmarks/bookmark.service';
 
 @Component({
   selector: 'app-list-pagination',

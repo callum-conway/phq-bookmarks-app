@@ -1,6 +1,6 @@
 import { Component, inject, computed, signal } from '@angular/core';
 import { CardModule } from 'primeng/card';
-import { BookmarkService } from '../../bookmarks/bookmark.service';
+import { BookmarkService } from '../../services/bookmarks/bookmark.service';
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { Bookmark } from '../../components/bookmarks-list/bookmarks-list.component';
 import { ButtonModule } from 'primeng/button';

@@ -3,7 +3,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { AddBookmarkComponent } from '../add-bookmark/add-bookmark.component';
-import { BookmarkService } from '../../bookmarks/bookmark.service';
+import { BookmarkService } from '../../services/bookmarks/bookmark.service';
 
 @Component({
   selector: 'app-edit-bookmark-dialog',
@@ -13,12 +13,4 @@ import { BookmarkService } from '../../bookmarks/bookmark.service';
 })
 export class EditBookmarkDialogComponent {
   public bookmarksService = inject(BookmarkService);
-
-  // toggleDialog() {
-  //   this.bookmarksService.toggleEditDialog()
-  // }
-
-  // updateBookmark() {
-  //   this.bookmarksService.updateBookmark()
-  // }
 }

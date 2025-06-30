@@ -2,7 +2,7 @@ import { Component, computed, inject, input } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { BookmarkItemComponent } from '../bookmark-item/bookmark-item.component';
 import { AddBookmarkComponent } from '../add-bookmark/add-bookmark.component';
-import { BookmarkService } from '../../bookmarks/bookmark.service';
+import { BookmarkService } from '../../services/bookmarks/bookmark.service';
 import { ListPaginationComponent } from '../list-pagination/list-pagination.component';
 
 export interface Bookmark {

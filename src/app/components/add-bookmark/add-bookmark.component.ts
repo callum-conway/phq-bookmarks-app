@@ -1,7 +1,7 @@
 import { Component, inject, input, SimpleChanges } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { BookmarkService } from '../../bookmarks/bookmark.service';
+import { BookmarkService } from '../../services/bookmarks/bookmark.service';
 import { validUrlCheck } from './valid-url.validator';
 
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';

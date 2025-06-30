@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BookmarkService } from './bookmarks/bookmark.service';
+import { BookmarkService } from './services/bookmarks/bookmark.service';
 
 @Component({
   selector: 'app-root',

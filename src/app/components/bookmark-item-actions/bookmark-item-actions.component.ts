@@ -1,6 +1,6 @@
 import { Component, input, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { BookmarkService } from '../../bookmarks/bookmark.service';
+import { BookmarkService } from '../../services/bookmarks/bookmark.service';
 import { Bookmark } from '../bookmarks-list/bookmarks-list.component';
 
 

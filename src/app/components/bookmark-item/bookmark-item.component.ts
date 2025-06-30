@@ -18,7 +18,6 @@ interface StatusBadge {
   
 export class BookmarkItemComponent {
   bookmark = input<Bookmark>({ id: '', title: '', url: '', status: 'undefined' });
-  // severityType = signal<"info" | "success" | "warn" | "danger" | "secondary" | "contrast">('info');
 
   statusBadge = computed<StatusBadge>(() => {
     switch (this.bookmark().status) {
