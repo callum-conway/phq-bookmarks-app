@@ -1,11 +1,13 @@
+<!-- Pagination links for navigating the bookmarks list -->
 <div class="flex gap-2 items-center mx-auto">
   <p-button (click)="prevPage()" [disabled]="currentPage() <= 1" severity="secondary" icon="pi pi-angle-left"
     [outlined]="true" size="small" />
 
   @for (page of pageLinksArray(); track page) {
-  <p-button (click)="goToPage(page)" severity="secondary" [label]="page.toString()"
-    class="min-w-[35px] [&_button]:w-full" [disabled]="currentPage() === page" [outlined]="currentPage() !== page"
-    size="small" />
+    <p-button (click)="goToPage(page)" severity="secondary" [label]="page.toString()"
+      class="min-w-[35px] [&_button]:w-full" [disabled]="currentPage() === page" [outlined]="currentPage() !== page"
+      size="small"
+    />
   }
 
   <p-button (click)="nextPage()" [disabled]="currentPage() >= totalPages()" severity="secondary"

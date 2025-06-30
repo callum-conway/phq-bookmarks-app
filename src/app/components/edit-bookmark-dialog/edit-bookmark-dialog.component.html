@@ -1,6 +1,8 @@
+<!-- Popup dialog for editing selected bookmark -->
 <p-dialog header="Edit Bookmark" [modal]="true" [(visible)]="this.bookmarksService.editDialogOpen"
   [breakpoints]="{ '1199px': '60vw', '575px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
   <div class="flex items-center gap-4 mb-4">
+    <!-- Editable input containing selected URL from bookmarks service -->
     <app-add-bookmark
       [showUpdateButton]="true"
       class="w-full"

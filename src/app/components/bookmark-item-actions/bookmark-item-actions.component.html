@@ -1,6 +1,12 @@
+<!-- Buttons for bookmark item (delete, edit, open)  -->
 <div class="flex gap-1">
+    <!-- Delete bookmark action -->
     <p-button (click)="deleteBookmark()" class="grayscale hover:grayscale-0" size="small" icon="pi pi-trash" [rounded]="true" [text]="true" severity="danger" />
+    
+    <!-- Open edit bookmark dialog to edit selected bookmark -->
     <p-button (click)="toggleEditBookmarkDialog(); selectBookmark();" class="grayscale hover:grayscale-0" size="small" icon="pi pi-pencil" [rounded]="true" [text]="true" severity="info" />
+
+    <!-- Open selected bookmark in new tab -->
     <a [href]="bookmark().url" target="_blank" rel="noopener noreferrer" aria-label="Open Bookmark" class="p-button p-button-rounded p-button-text w-8 h-8">
         <i class="pi pi-external-link"></i>
     </a>
