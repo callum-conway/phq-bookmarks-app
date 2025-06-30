@@ -1,0 +1,7 @@
+<div class="flex gap-1">
+    <p-button (click)="deleteBookmark()" class="grayscale hover:grayscale-0" size="small" icon="pi pi-trash" [rounded]="true" [text]="true" severity="danger" />
+    <p-button (click)="toggleEditBookmarkDialog(); selectBookmark();" class="grayscale hover:grayscale-0" size="small" icon="pi pi-pencil" [rounded]="true" [text]="true" severity="info" />
+    <a [href]="bookmark().url" target="_blank" rel="noopener noreferrer" aria-label="Open Bookmark" class="p-button p-button-rounded p-button-text w-8 h-8">
+        <i class="pi pi-external-link"></i>
+    </a>
+</div>

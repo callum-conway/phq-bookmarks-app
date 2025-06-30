@@ -1,0 +1,20 @@
+<main class="main p-3 md:p-6">
+  <p-card header="Bookmark Added!" [style]="{ 'max-width': '600px', margin: '0 auto' }">
+    <div class="flex flex-col gap-4">
+      <p>Thank you for saving the following URL to your bookmarks:</p>
+
+      <div class="flex justify-between items-center h-11 md:h-10 py-1 px-3 bg-slate-50 dark:bg-white/5 rounded-lg group">
+        {{ bookmark().url }}
+
+        <a [href]="bookmark().url" target="_blank" rel="noopener noreferrer" aria-label="Open Bookmark"
+          class="p-button p-button-rounded p-button-text w-8 h-8 flex items-center justify-center">
+          <i class="pi pi-external-link"></i>
+        </a>
+      </div>
+
+      <p>Feel free to return to the homepage to add more bookmarks!</p>
+
+      <a routerLink="/" class="text-right underline">Return to home page</a>
+    </div>
+  </p-card>
+</main>

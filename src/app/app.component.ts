@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BookmarkService } from './bookmarks/bookmark.service';
+import { BookmarkService } from './services/bookmarks/bookmark.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { BookmarkService } from './bookmarks/bookmark.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'PHQ Bookmarks App';
+  title = 'PHQ-bookmarks-app';
   private bookmarksService = inject(BookmarkService);
 
   ngOnInit(): void {
