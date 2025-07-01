@@ -2,6 +2,7 @@ import { Injectable, computed, signal, inject } from '@angular/core';
 import { Bookmark } from '../../components/bookmarks-list/bookmarks-list.component';
 import { nanoid } from 'nanoid/non-secure';
 import { Router } from '@angular/router';
+import { MOCK_BOOKMARKS } from './mock-bookmarks';
 
 /**
  * Service for managing bookmarks.
@@ -27,7 +28,10 @@ export class BookmarkService {
   /** Check for and retrieve any bookmarks saved in local storage and assign to bookmarks signal. */
   getBookmarks() {
     const myBookmarks: string | null = localStorage.getItem('my-bookmarks');
+    console.log('Retrieving bookmarks from local storage:', myBookmarks);
     if (!myBookmarks) {
+      console.log('No bookmarks found in local storage, using mock data.');
+      this.bookmarks.set(MOCK_BOOKMARKS);
       return;
     } else {
       this.bookmarks.set(JSON.parse(myBookmarks));
